@@ -40,7 +40,14 @@ $(function () {
   }
 
   function initSocket() {
-    var socket = io.connect('http://'+location.host);
+    var http;
+    if(/^https/.test(location.href)){
+      http = 'https://';
+    }else{
+      http = 'http://';
+    }
+
+    var socket = io.connect(http+location.host);
     socket.on('msg', function (data) {
       msgList.push(data);
       if(msgList.length >200){
