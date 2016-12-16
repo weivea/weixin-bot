@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="../public/css/login.css">{% extends "layout.html" %}
+
+
+
+{% block style %}
+<link rel="stylesheet" href="/public/css/login.css">
+{% endblock %}
+
+{% block content %}
+<section class="login">
+    <form id="login-form" class="login-box">
+        <p class="t">weixin bot</p>
+        <input class="in" type="text" name="user" maxlength="16" placeholder="用户名">
+        <input class="in" type="password" name="pass" maxlength="16" placeholder="用户密码">
+        <input class="btn" type="submit" value="登录">
+    </form>
+</section>
+{% endblock %}
+
+
+{% block script %}
+<script src="/public/js/md5Fun.js"></script>
+<script src="/public/js/login.js"></script>
+{% endblock %}
+
+
+
+

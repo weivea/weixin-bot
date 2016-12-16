@@ -1,0 +1,29 @@
+.login-box{
+    position: fixed;
+    max-width: 100%;
+    width: 400px;
+    text-align: center;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -200px;
+}
+.login-box input{
+    display: block;
+    margin: 0 auto 20px;
+    width: 320px;
+    height: 32px;
+    border: 1px solid #10b50d;
+}
+.login-box .t{
+    font-size: 64px;
+    text-shadow: 4px 4px 8px #000;
+    margin: 0 0 20px;
+}
+
+.login-box .btn{
+    background: #367cb5;
+    color: #fff;
+    border: 1px solid #367cb5;
+    cursor: pointer;
+}

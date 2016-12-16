@@ -1,0 +1,51 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+.box{
+    height: 100%;
+}
+.l-side{
+    height: 100%;
+    width: 250px;
+    float: left;
+    padding: 8px;
+    border-right: 1px solid #666;
+}
+
+.l-side .t{
+    font-size: 32px;
+    text-shadow: 4px 4px 8px #000;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.l-side .btn{
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.l-side .btn.btn-start{
+    background: #2db97f;
+}
+.l-side .btn.btn-down{
+    background: #ff7676;
+}
+.l-side .btn.btn-clear{
+    background: #ccc;
+}
+.l-side .qr-code{
+    width: 100%;
+}
+.r-side{
+    height: 100%;
+    margin-left: 258px;
+    overflow-y: auto;
+}
+#msgs{
+    white-space: pre-line;
+}

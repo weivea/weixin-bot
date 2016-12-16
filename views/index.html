@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block style %}
+<link rel="stylesheet" href="/public/css/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="box">
+    <div class="l-side">
+        <p class="t">weixin bot</p>
+        <div id="btn-start" class="btn btn-start">启动</div>
+        <div id="btn-down" class="btn btn-down">关闭</div>
+        <div id="btn-clear" class="btn btn-clear">clear</div>
+
+        <p>登录二维码</p>
+        <img id="qr-code" class="qr-code" src="">
+    </div>
+    <div  class="r-side">
+        <pre id="msgs">
+
+        </pre>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+
+<script src="/public/js/socket.io.min.js"></script>
+<script src="/public/js/index.js"></script>
+{% endblock %}
