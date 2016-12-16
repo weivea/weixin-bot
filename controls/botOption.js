@@ -28,16 +28,16 @@ function botOption(req, res) {
             })
           }catch (e){console.log(e)}
         }
-        global.socketIo.emit('msg',m.msg)
+        emitEvent('msg',m.msg)
       }
     })
   }else if(req.body.option == 'down' && global.botChild){
     console.log('kill bot:'+global.botChild.pid);
-    global.socketIo.emit('msg','kill bot:'+global.botChild.pid);
+    emitEvent('msg','kill bot:'+global.botChild.pid);
     var re = global.botChild.kill();
     global.botChild = null;
     console.log('kill bot re:' + re);
-    global.socketIo.emit('msg','kill bot re:' + re);
+    emitEvent('msg','kill bot re:' + re);
     res.send({
       err:0,
       str:'bot Down!',
@@ -46,20 +46,27 @@ function botOption(req, res) {
       }
     })
   }else if(req.body.option == 'clear' && !global.botChild){
-    global.socketIo.emit('msg','run cmd: "rm .cookie.json .secret.json"');
+    emitEvent('msg','run cmd: "rm .cookie.json .secret.json"');
     cp.exec('rm .cookie.json .secret.json', (error, stdout, stderr) => {
       if (error) {
-        global.socketIo.emit('msg',`exec error: ${error}`);
+        emitEvent('msg',`exec error: ${error}`);
         return;
       }
-      global.socketIo.emit('msg',`stdout: ${stdout}`);
-      global.socketIo.emit('msg',`stderr: ${stderr}`);
+      emitEvent('msg',`stdout: ${stdout}`);
+      emitEvent('msg',`stderr: ${stderr}`);
     });
   }else {
     res.send({
       err:1,
       str:'wrong option'
     })
+  }
+}
+
+
+function emitEvent() {
+  if(global.socketIo && global.socketIo.sockets){
+    global.socketIo.emit(...arguments)
   }
 }
 
