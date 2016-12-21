@@ -2,15 +2,13 @@
  * Created by weijianli on 16/12/14.
  */
 var request = require('superagent');
+var config = require('../config');
 // var md5Fun = require('./md5Fun.js')
 // var AESFun = require('./AESFun.js')
 
 
-var cfg = {
-  APIUrl: 'http://www.tuling123.com/openapi/api',
-  APIkey: 'f1b9887e6994461dbb88ea3834de2195',
-  secret: '6e9a0dfe677d6583',
-}
+var cfg = config.turing;
+
 function tuRingFun(msg, userId) {
   //console.log(`userId:${userId}`);
   return new Promise(function (resolve, reject) {
